@@ -9,3 +9,7 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+1. Variable **candidate** value is set to **TRIVIAL_PARTITION_KEY** at the beginning to eventually save an **else** block.
+2. **if**s for **event** exists and **event.partitionKey** exists were combined.
+3. The candidate partition key creation is moved to an **else** block called when **event** exists but **event.partitionKey** does not.
+4. Checking for whether **candidate** is **string** type is moved outside the if statement since **candidate** always exists.
